@@ -2,7 +2,11 @@ import axios, { Axios, AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-toastify";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost/",
+  baseURL: "http://localhost:30336/catalogapi/",
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/json",
+  },
 });
 
 const responseBody = (response: AxiosResponse) => response.data;
